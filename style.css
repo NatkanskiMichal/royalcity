@@ -9,10 +9,10 @@
 body {
     min-height: 100vh;
     width: 100%;
-    overflow: hidden;
+
     /* background: rgb(28, 125, 200);
     background: linear-gradient(90deg, rgba(28, 156, 254, 0.628) 0%, rgb(26, 85, 130) 100%, rgba(36, 117, 203, 0.072) 100%); */
-    background: rgb(20, 20, 20);
+    background: white
 }
 
 .app {
@@ -286,6 +286,7 @@ body {
 
 .buying-form input {
     height: 30px;
+    border: 1px solid rgb(220, 220, 220);
 }
 
 .buying-form button {
