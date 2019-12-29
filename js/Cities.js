@@ -2,10 +2,10 @@ class Cities {
   constructor() {
     this._cities = ["Londyn", "Nowy Jork", "Krynica - Zdrój", "Moskwa"];
     this._citiesImages = [
-      "/img/london.jpg",
-      "/img/newyork.jpg",
-      "/img/krynica.jpg",
-      "/img/moscow.jpg"
+      "img/london.jpg",
+      "img/newyork.jpg",
+      "img/krynica.jpg",
+      "img/moscow.jpg"
     ];
     this.cityCounter = 0;
   }
