@@ -613,91 +613,9 @@ body {
   }
 }
 
-@media (min-device-width : 1024px) {
 
-  .header {
-    height: 320px;
-  }
 
-  .header .header-title {
-    font-size: 1.5em;
-  }
 
-  .header-wrapper {
-    font-size: 1.5em;
-  }
-
-  .header-wrapper .city {
-    width: 130px;
-    height: 130px;
-  }
-
-  .city-title {
-    height: 40px;
-  }
-
-  .city-name {
-    font-size: .3em;
-  }
-
-  .changeCityBtn {
-    width: 40%;
-    height: 60px;
-    font-size: 1.5em;
-  }
-
-  .board .card {
-    margin: 10px;
-    width: 35vw;
-    height: 35vw;
-  }
-
-  .card h2 {
-    margin-top: 20px;
-    font-size: 2.1em;
-  }
-
-  .card p {
-    font-size: 1.5em;
-  }
-
-  .transactions .buy-btn,
-  .transactions .sell-btn,
-  .buying-form .confirm-btn {
-    width: 60%;
-    height: 50px;
-    font-size: 1.4em;
-  }
-
-  .alert-active {
-    min-height: 100px;
-    width: 250px;
-    font-size: 1.4em;
-  }
-
-  .buying-form {
-    width: 400px;
-    height: 220px;
-  }
-
-  .buying-form input {
-    width: 80%;
-    height: 50px;
-    font-size: 1.5em;
-  }
-
-  .selling-form {
-    font-size: 1.5em;
-    height: calc(100vh - 220px);
-  }
-
-  .selling-form .close-form,
-  .selling-form ul li button {
-    width: 20%;
-    height: 50px;
-    font-size: 1em;
-  }
-}
 
 @media only screen and (max-device-width : 700px) and (orientation : landscape) {
   .header {
@@ -806,5 +724,91 @@ body {
     width: 60%;
     height: 30px;
     font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-device-width : 1024px) {
+
+  .header {
+    height: 220px;
+  }
+
+  .header .header-title {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper .city {
+    width: 130px;
+    height: 130px;
+  }
+
+  .city-title {
+    height: 40px;
+  }
+
+  .city-name {
+    font-size: .3em;
+  }
+
+  .changeCityBtn {
+    width: 40%;
+    height: 60px;
+    font-size: 1.5em;
+  }
+
+  .board .card {
+    margin: 10px;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .card h2 {
+    margin-top: 20px;
+    font-size: 2.1em;
+  }
+
+  .card p {
+    font-size: 1.5em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn {
+    width: 60%;
+    height: 50px;
+    font-size: 1.4em;
+  }
+
+  .alert-active {
+    min-height: 100px;
+    width: 250px;
+    font-size: 1.4em;
+  }
+
+  .buying-form {
+    width: 400px;
+    height: 220px;
+  }
+
+  .buying-form input {
+    width: 80%;
+    height: 50px;
+    font-size: 1.5em;
+  }
+
+  .selling-form {
+    font-size: 1.5em;
+    height: calc(100vh - 220px);
+  }
+
+  .selling-form .close-form,
+  .selling-form ul li button {
+    width: 20%;
+    height: 50px;
+    font-size: 1em;
   }
 }
