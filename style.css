@@ -1,338 +1,810 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    width: 100%;
-
-    /* background: rgb(28, 125, 200);
-    background: linear-gradient(90deg, rgba(28, 156, 254, 0.628) 0%, rgb(26, 85, 130) 100%, rgba(36, 117, 203, 0.072) 100%); */
-    background: white
+  height: 100vh;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(250, 134, 66);
+  overflow: hidden;
 }
 
 .app {
-    widows: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  widows: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.rules-btn,
-.close-rules {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 60px;
-    height: 20px;
-    background: white;
-    border: 1px solid rgb(220, 220, 220);
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    cursor: pointer;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -ms-transition: .2s;
+  -o-transition: .2s;
 }
 
-.rules {
-    display: none;
-    position: relative;
-    width: 80%;
-    background-color: white;
-    min-height: 300px;
-    border: 1px solid rgb(220, 220, 220);
+.header-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.rules.active {
-    display: block;
+.header-title .title {
+  color: gray;
+  font-size: 1em;
+  font-weight: 300;
 }
 
-.rules p {
-    margin: 40px 20px;
-    text-align: center;
-    font-size: 0.8em;
-    letter-spacing: 1px;
+.header-wrapper {
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start
 }
 
-.wrapper {
-    width: 100%;
-    height: 300px;
+.header-title .rules-btn,
+.header-title .close-rules {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: .8em;
+  color: gray;
+  font-weight: bold;
+  background: white;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.header-title .rules {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 80%;
+  background-color: white;
+  min-height: 300px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.header-title .rules.active {
+  display: block;
+}
+
+.header-title .rules p {
+  margin: 40px 20px;
+  text-align: center;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  color: rgb(150, 150, 150);
+}
+
+.header-wrapper .wallet {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.9em;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15%;
+}
+
+.wallet p:first-child {
+  margin: 6px;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.wallet p span {
+  color: rgb(250, 134, 66);
+}
+
+.wallet p span:last-child {
+  font-weight: 400;
 
 }
 
-.wallet {
-    width: 400px;
-    height: 300px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.1em;
-    text-align: center;
-    border: 1px solid rgb(220, 220, 220);
-}
-
-.city {
-    position: relative;
-    width: 400px;
-    height: 300px;
-    overflow: hidden;
+.header-wrapper .city {
+  margin-bottom: 15%;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .city-img {
-    height: 100%;
-    width: 150%;
+  filter: grayscale(0.5);
+  height: 100%;
+  width: 120%;
+  transition: 0.2s;
+  -webkit-filter: grayscale(0.5);
+}
+
+.city-img.active {
+  margin-left: -150%;
 }
 
 .city-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    background-color: rgba(20, 20, 20, 0.9);
-    color: white;
-    text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 20px;
+  background-color: rgba(20, 20, 20, 0.9);
+  color: white;
+  text-align: center;
+  z-index: 2;
 }
 
 .city-name {
-    font-size: .6em;
-    color: rgb(249, 245, 245);
-    z-index: 2;
+  font-size: 0.4em;
+  color: rgb(249, 245, 245);
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.city-name.active {
+  opacity: 0;
+  margin-left: 150%;
 }
 
 .changeCityBtn {
-    margin: 20px;
-    height: 50px;
-    width: 180px;
-    border: none;
-    background: crimson;
-    color: white;
-    font-size: 1.2em;
-    border-radius: 10px;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -ms-transition: .2s;
-    -o-transition: .2s;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    cursor: pointer;
+  margin: 20px;
+  height: 40px;
+  width: 150px;
+  border: none;
+  background: rgb(45, 45, 45);
+  color: white;
+  font-size: 1.1em;
+  border-radius: 10px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
 }
 
 .changeCityBtn:hover {
-    background: rgb(255, 0, 51);
-    font-size: 1.3em;
+  background: rgb(0, 0, 0);
+  font-size: 1.3em;
 }
 
-
-
-
 .board {
-    /* border: 1px solid green; */
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .card {
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 5px;
-    background-color: rgb(250, 250, 250);
-    text-align: center;
-    border: 1px solid rgb(220, 220, 220);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 5px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-.card h3 {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: rgb(20, 20, 20);
+.card h2 {
+  font-size: .9em;
+  font-weight: bold;
+  margin: 10px;
+  color: rgb(63, 63, 63)
 }
 
 .card p {
-    margin: 5px;
-    font-size: .8em;
-    color: rgb(50, 50, 50);
+  margin: 10px;
+  font-size: 0.8em;
+  color: rgb(189, 189, 189)
 }
 
-
-.buying-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: -50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 10px;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -ms-transition: .2s;
-    -o-transition: .2s;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+.card p span {
+  color: rgb(250, 134, 66);
 }
 
-.selling-form {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: -50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    min-width: 200px;
-    min-height: 100px;
-    background-color: rgba(250, 250, 250);
-    border: 1px solid black;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -ms-transition: .2s;
-    -o-transition: .2s;
+.transactions {
+  position: absolute;
+  left: 10px;
+  right: 0px;
+  bottom: 5px;
+  width: 100%;
 }
 
-.selling-form .close-form {
-    margin: 1px;
-    color: white;
-    width: 50px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 10px 0 0 0;
-    background-color: rgb(232, 83, 83);
-    -webkit-border-radius: 10px 0 0 0;
-    -moz-border-radius: 10px 0 0 0;
-    -ms-border-radius: 10px 0 0 0;
-    -o-border-radius: 10px 0 0 0;
-}
-
-.selling-form h1 {
-    text-align: center;
-    font-size: 1em;
-}
-
-.selling-form ul {
-    list-style: none;
-    margin: 5px;
-}
-
-.selling-form ul li {
-    padding: 2px;
-    color: rgb(50, 50, 50);
-}
-
+.transactions .buy-btn,
+.transactions .sell-btn,
+.buying-form .confirm-btn,
+.selling-form .close-form,
 .selling-form ul li button {
-    margin: 1px;
-    color: white;
-    width: 50px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 5px;
-    font-size: .6em;
-    font-family: sans-serif;
-    background-color: rgb(43, 110, 212);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+  width: 60%;
+  height: 25px;
+  border: none;
+  font-family: sans-serif;
+  color: rgb(63, 63, 63);
+  font-size: 0.6em;
+  border: 2px solid rgb(255, 232, 219);
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-.buying-form input {
-    height: 30px;
-    border: 1px solid rgb(220, 220, 220);
-}
-
-.buying-form button {
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    background-color: rgb(217, 84, 71);
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-}
-
-.transactions button {
-    width: 70px;
-    height: 30px;
-    border: none;
-    font-family: sans-serif;
-    color: white;
-    font-size: 0.8em;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -ms-transition: .2s;
-    -o-transition: .2s;
-    cursor: pointer;
-}
-
-.transactions .sell-btn {
-    background-color: rgb(217, 84, 84);
-    cursor: pointer;
+.transactions .sell-btn,
+.selling-form ul li button {
+  background-color: rgb(250, 134, 66);
+  color: white;
 }
 
 .transactions .sell-btn:hover {
-    background-color: rgb(187, 68, 68);
-    font-size: 0.9em;
-}
-
-.transactions .buy-btn {
-    background-color: rgb(84, 217, 84);
-    cursor: pointer;
+  background-color: rgba(250, 133, 66, 0);
+  color: rgb(250, 134, 66);
 }
 
 .transactions .buy-btn:hover {
-    background-color: rgb(84, 187, 84);
-    font-size: 0.9em;
+  background-color: rgb(250, 134, 66);
+  color: white;
+}
+
+.alert-active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  min-height: 50px;
+  width: 150px;
+  text-align: center;
+  border: 2px solid rgb(250, 134, 66);
+  color: rgb(63, 63, 63);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: .9em;
+  font-weight: bold;
+  animation-duration: .7s;
+  animation-name: shakeAlert;
+}
+
+@keyframes shakeAlert {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-5deg);
+    -moz-transform: translate(-50%, -50%) rotate(-5deg);
+    -ms-transform: translate(-50%, -50%) rotate(-5deg);
+    -o-transform: translate(-50%, -50%) rotate(-5deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(5deg);
+    -webkit-transform: translate(-50%, -50%) rotate(5deg);
+    -moz-transform: translate(-50%, -50%) rotate(5deg);
+    -ms-transform: translate(-50%, -50%) rotate(5deg);
+    -o-transform: translate(-50%, -50%) rotate(5deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-5deg);
+    -moz-transform: translate(-50%, -50%) rotate(-5deg);
+    -ms-transform: translate(-50%, -50%) rotate(-5deg);
+    -o-transform: translate(-50%, -50%) rotate(-5deg);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.buying-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 200px;
+  height: 120px;
+  background-color: white;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 10px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.selling-form {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -100vh;
+  width: 100%;
+  height: calc(100% - 150px);
+  background-color: rgba(255, 255, 255);
+  border-radius: 20px 20px 0 0;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -ms-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
+}
+
+.selling-form .close-form {
+  width: 50px;
+  margin: 10px;
+}
+
+.selling-form h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.selling-form p {
+  text-align: center;
+  font-size: 0.8em;
+  color: gray;
+}
+
+.selling-form ul {
+  list-style: none;
+  margin: 5px;
+}
+
+.selling-form ul li {
+  text-align: center;
+  padding: 2px;
+  color: rgb(50, 50, 50);
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.selling-form ul li button {
+  width: 50px;
+  margin-left: 10px;
+}
+
+.buying-form input {
+  height: 30px;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+/*mediaqueries*/
+
+@media only screen and (min-device-width : 320px) {
+
+  .header-title .rules {
+    position: absolute;
+    top: 50vh;
+  }
+
+  .board .card {
+    width: 45vw;
+    height: 45vw;
+  }
+
+  .card h2 {
+    font-size: 1em;
+  }
+
+  .card p {
+    font-size: .8em;
+  }
+}
+
+@media only screen and (min-device-width : 375px) {
+
+  .header-title .rules {
+    position: absolute;
+    top: 50vh;
+  }
+
+  .wallet p {
+    font-size: 1.1em;
+  }
+
+  .header-wrapper .city {
+    width: 90px;
+    height: 90px;
+  }
+
+  .city-name {
+    font-size: .35em;
+  }
+
+  .board .card {
+    width: 45vw;
+    height: 45vw;
+  }
+
+  .card h2 {
+    font-size: 1.2em;
+  }
+
+  .card p {
+    font-size: 1em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn {
+    width: 60%;
+    height: 30px;
+    font-size: 0.8em;
+  }
+
+  .selling-form {
+    height: calc(100% - 150px);
+    z-index: 2;
+  }
+}
+
+@media only screen and (min-device-width : 768px) {
+
+  .header {
+    height: 220px;
+  }
+
+  .header .header-title {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper .city {
+    width: 130px;
+    height: 130px;
+  }
+
+  .city-title {
+    height: 40px;
+  }
+
+  .city-name {
+    font-size: .3em;
+  }
+
+  .changeCityBtn {
+    width: 40%;
+    height: 60px;
+    font-size: 1.5em;
+  }
+
+  .board .card {
+    margin: 10px;
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .card h2 {
+    margin-top: 20px;
+    font-size: 2.1em;
+  }
+
+  .card p {
+    font-size: 1.5em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn {
+    width: 60%;
+    height: 50px;
+    font-size: 1.4em;
+  }
+
+  .alert-active {
+    min-height: 100px;
+    width: 250px;
+    font-size: 1.4em;
+  }
+
+  .buying-form {
+    width: 400px;
+    height: 220px;
+  }
+
+  .buying-form input {
+    width: 80%;
+    height: 50px;
+    font-size: 1.5em;
+  }
+
+  .selling-form {
+    font-size: 1.5em;
+    height: calc(100vh - 220px);
+  }
+
+  .selling-form .close-form,
+  .selling-form ul li button {
+    width: 20%;
+    height: 50px;
+    font-size: 1em;
+  }
+}
+
+@media (min-device-width : 1024px) {
+
+  .header {
+    height: 320px;
+  }
+
+  .header .header-title {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper {
+    font-size: 1.5em;
+  }
+
+  .header-wrapper .city {
+    width: 130px;
+    height: 130px;
+  }
+
+  .city-title {
+    height: 40px;
+  }
+
+  .city-name {
+    font-size: .3em;
+  }
+
+  .changeCityBtn {
+    width: 40%;
+    height: 60px;
+    font-size: 1.5em;
+  }
+
+  .board .card {
+    margin: 10px;
+    width: 35vw;
+    height: 35vw;
+  }
+
+  .card h2 {
+    margin-top: 20px;
+    font-size: 2.1em;
+  }
+
+  .card p {
+    font-size: 1.5em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn {
+    width: 60%;
+    height: 50px;
+    font-size: 1.4em;
+  }
+
+  .alert-active {
+    min-height: 100px;
+    width: 250px;
+    font-size: 1.4em;
+  }
+
+  .buying-form {
+    width: 400px;
+    height: 220px;
+  }
+
+  .buying-form input {
+    width: 80%;
+    height: 50px;
+    font-size: 1.5em;
+  }
+
+  .selling-form {
+    font-size: 1.5em;
+    height: calc(100vh - 220px);
+  }
+
+  .selling-form .close-form,
+  .selling-form ul li button {
+    width: 20%;
+    height: 50px;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-device-width : 700px) and (orientation : landscape) {
+  .header {
+    height: 100px;
+  }
+
+  .header-title {
+    height: 40px;
+    top: 0;
+  }
+
+  .header-title .rules {
+    top: 50vh
+  }
+
+  .header-wrapper {
+    height: 70px;
+    margin-top: 20px;
+  }
+
+  .header-wrapper .city {
+    width: 70px;
+    height: 70px;
+  }
+
+  .city-name {
+    font-size: .32em;
+  }
+
+  .board .card {
+    width: 22vw;
+    height: 22vw;
+  }
+
+  .card h2 {
+    font-size: 1em;
+  }
+
+  .card p {
+    font-size: .8em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn,
+  .selling-form .close-form,
+  .selling-form ul li button {
+    width: 60%;
+    height: 25px;
+    font-size: 0.6em;
+  }
+
+  .selling-form {
+    height: calc(100% - 100px);
+  }
+
+
+}
+
+@media only screen and (min-device-width: 700px) and (orientation : landscape) {
+  .header {
+    height: 100px;
+  }
+
+  .header-title {
+    height: 40px;
+    top: 0;
+  }
+
+  .header-title .rules {
+    top: 50vh
+  }
+
+  .header-wrapper {
+    height: 70px;
+    margin-top: 20px;
+  }
+
+  .header-wrapper .city {
+    width: 70px;
+    height: 70px;
+  }
+
+  .city-name {
+    font-size: .32em;
+  }
+
+  .board .card {
+    width: 22vw;
+    height: 22vw;
+  }
+
+  .card h2 {
+    font-size: 1.2em;
+  }
+
+  .card p {
+    font-size: 1em;
+  }
+
+  .transactions .buy-btn,
+  .transactions .sell-btn,
+  .buying-form .confirm-btn,
+  .selling-form .close-form,
+  .selling-form ul li button {
+    width: 60%;
+    height: 30px;
+    font-size: 0.8em;
+  }
 }

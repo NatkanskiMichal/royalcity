@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, height=device-height" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Royal city</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=latin-ext" rel="stylesheet">
   </head>
   <body>
     <div class="app">
-      <h1>Royal City</h1>
-      <button class="rules-btn">Zasady</button>
-      <div class="rules">
-        <button class="close-rules">Zamknij</button>
-        <p>Royal City - Gra polega na kupnie oraz
-           sprzedaży różnych dóbr materialnych w określonych 
-           cenach. Przycisk podróżuj przenosi nas do innego 
-           miasta, w którym ceny różnych dóbr generowane są 
-           losowo z przewidzianego zakresu oraz pobiera 500$ 
-           za podróż. Dobra możemy nabywać poprzez kliknięcie 
-           przycisku Kup i sprzedawać w lepszych cenach w
-           innych miastach poprzez kliknięcie przycisku Sprzedaj
-           i wybranie tego co chcemy sprzedać. Celem gry
-           jest uzyskanie jak największych przychodów
-           awansując przy tym w środowisku biznesowym.
-           Każdy poziom ma określony pułap, który trzeba 
-           osiągnąć. Podobno poziom Bill Gates jest
-           ciężki do osiągnięcia, czy tak jest 
-           przekonaj się sam!</p>
-      </div>
-      <div class="wrapper">
+      <header class="header">
+        <div class="header-title">
+            <h1 class="title">Royal City</h1>
+            <button class="rules-btn">?</button>
+            <div class="rules">
+              <button class="close-rules">x</button>
+              <p>Royal City - Gra polega na kupnie oraz
+                 sprzedaży różnych dóbr materialnych w określonych 
+                 cenach. Przycisk podróżuj przenosi nas do innego 
+                 miasta, w którym ceny różnych dóbr generowane są 
+                 losowo z przewidzianego zakresu oraz pobiera 500$ 
+                 za podróż. Dobra możemy nabywać poprzez kliknięcie 
+                 przycisku Kup i sprzedawać w lepszych cenach w
+                 innych miastach poprzez kliknięcie przycisku Sprzedaj
+                 i wybranie tego co chcemy sprzedać. Celem gry
+                 jest uzyskanie jak największych przychodów
+                 awansując przy tym w środowisku biznesowym.
+                 Każdy poziom ma określony pułap, który trzeba 
+                 osiągnąć. Podobno poziom Bill Gates jest
+                 ciężki do osiągnięcia, czy tak jest 
+                 przekonaj się sam!</p>
+            </div>
+        </div>
+        <div class="header-wrapper">
         <div class="wallet">
-          <p>Gotówka: <span class="money">10000</span>$</p>
-          <p>Poziom:  <span class="level">Bazarowy Handlarz</span></p>
+          <p>Gotówka: <span class="money">10.000</span>$</p>
+          <p>Poziom: <span class="level">Bazarowy Handlarz</span></p>
         </div>
         <div class="city">
           <h2 class="city-title">
@@ -41,48 +45,49 @@
           <img class="city-img" src="img/london.jpg" />
         </div>
       </div>
+      </header>
       <button type="button" class="changeCityBtn">Podróżuj</button>
       
     </div>
 
     <div class="board">
       <div class="card">
-        <h3>Złoto</h3>
-        <p>Cena: <span class="gold-price">250</span>$ sztabka</p>
+        <h2>Złoto</h2>
+        <p>Cena: <span class="gold-price">500</span> $</p>
 
         <div class="transactions">
           <button class="buy-btn">Kup</button>
-          <button class="sell-btn">Sprzedaj</button>
+          <button class="sell-btn">Sprawdź stan</button>
         </div>
       </div>
 
       <div class="card">
-        <h3>Ropa Naftowa</h3>
-        <p>Cena: <span class="petroleum-price">1000</span>$ cysterna</p>
+        <h2>Ropa Naftowa</h2>
+        <p>Cena: <span class="petroleum-price">5.000</span> $</p>
 
         <div class="transactions">
           <button class="buy-btn">Kup</button>
-          <button class="sell-btn">Sprzedaj</button>
+          <button class="sell-btn">Sprawdź stan</button>
         </div>
       </div>
 
       <div class="card">
-        <h3>Dom</h3>
-        <p>Cena: <span class="house-price">25000</span>$ Dom</p>
+        <h2>Dom</h3>
+        <p>Cena: <span class="house-price">50.000</span> $</p>
 
         <div class="transactions">
           <button class="buy-btn">Kup</button>
-          <button class="sell-btn">Sprzedaj</button>
+          <button class="sell-btn">Sprawdź stan</button>
         </div>
       </div>
 
      <div class="card">
-        <h3>Samochód</h3>
-        <p>Cena: <span class="car-price">10000</span>$ za samochód</p>
+        <h2>Samochód</h3>
+        <p>Cena: <span class="car-price">15.000</span> $</p>
 
         <div class="transactions">
           <button class="buy-btn">Kup</button>
-          <button class="sell-btn">Sprzedaj</button>
+          <button class="sell-btn">Sprawdź stan</button>
         </div>
       </div> 
       <!--
@@ -97,6 +102,7 @@
     <div class="selling-form">
       <button type="button" class="close-form">Zamknij</button>
       <h1></h1>
+      <p>Cena sprzedaży: <span class="selling-price"></span>$</p>
       <ul></ul>
     </div>
     <script src="js/Wallet.js"></script>
