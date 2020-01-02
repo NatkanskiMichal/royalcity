@@ -15,28 +15,22 @@ class Transactions {
     this.typeOfTrade = [];
   }
 
-  checkValueOfBuying = () => {
-    if (
-      typeof this.quantity === "" &&
-      this.quantity <= 0 &&
-      this.quantity === undefined
-    ) {
-      alert("Wartość za niska lub nieprawidłowa");
-      return;
-    }
+  checkValueOfBuying = showTransAlert => {
     if (this.walletValue < this.priceValue * this.quantity) {
-      alert("Nie masz wystarczająco gotówki aby dokonać tej transakcji");
+      showTransAlert("Nie masz wystarczająco gotówki");
       return;
     }
     if (
       this.quantity > 0 &&
       this.walletValue > this.priceValue * this.quantity
     ) {
-      alert("dokonałeś transakcji!");
+      showTransAlert("Dokonałeś Transakcji!");
       this.amount = this.priceValue * this.quantity;
       this.addToState();
+    } else {
+      showTransAlert("Wartość za niska lub nieprawidłowa");
+      return;
     }
-    console.log(typeof this.quantity);
   };
 
   addToState = () => {
@@ -75,46 +69,45 @@ class Transactions {
     this.walletValue += actualPrice * el.quantity;
   }
 
-  checkTradeList(i, removeTradeList) {
+  checkTradeList(i, generateTradeList, showStateAlert) {
     if (i === 0) {
       if (this.gold.length === 0) {
-        alert("Nie posiadasz stanu");
-
-        removeTradeList();
+        showStateAlert();
         return;
       } else {
         this.name = "Stan złota";
         this.typeOfTrade = this.gold;
+        generateTradeList();
       }
     }
     if (i === 1) {
       if (this.petroleum.length === 0) {
-        alert("Nie posiadasz stanu");
-        removeTradeList();
+        showStateAlert();
         return;
       } else {
         this.name = "Stan ropy";
         this.typeOfTrade = this.petroleum;
+        generateTradeList();
       }
     }
     if (i === 2) {
       if (this.house.length === 0) {
-        alert("Nie posiadasz stanu");
-        removeTradeList();
+        showStateAlert();
         return;
       } else {
         this.name = "Stan domów";
         this.typeOfTrade = this.house;
+        generateTradeList();
       }
     }
     if (i === 3) {
       if (this.car.length === 0) {
-        alert("Nie posiadasz stanu");
-        removeTradeList();
+        showStateAlert();
         return;
       } else {
         this.name = "Stan samochodów";
         this.typeOfTrade = this.car;
+        generateTradeList();
       }
     }
   }

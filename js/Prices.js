@@ -1,10 +1,10 @@
 class Prices {
   constructor() {
     this.allRandomPrices = [
-      (this._gold = 250),
-      (this._petroleum = 1000),
-      (this._house = 25000),
-      (this._car = 10000)
+      (this._gold = 500),
+      (this._petroleum = 5000),
+      (this._house = 50000),
+      (this._car = 15000)
     ];
   }
 
