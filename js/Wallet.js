@@ -19,7 +19,7 @@ class Wallet {
   checkWalletStatus = () => {
     if (this.money === 0) {
       alert("Przegrałeś!");
-      //zerowanie statystyk
+
       this.money = 10000;
     } else if (this.money >= 50000) {
       this.level = 1;
