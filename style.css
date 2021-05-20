@@ -8,7 +8,7 @@ body {
   height: 100vh;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(250, 134, 66);
+  background-color: rgb(20, 20, 20);
   overflow: hidden;
 }
 
@@ -292,7 +292,7 @@ body {
 
 .transactions .sell-btn,
 .selling-form ul li button {
-  background-color: rgb(250, 134, 66);
+  background-color: rgb(20, 20, 20);
   color: white;
 }
 
